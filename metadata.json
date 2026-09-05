@@ -1,0 +1,6 @@
+{
+  "name": "Image Resizer",
+  "description": "Image Resizer Android application with image compression and format conversion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
