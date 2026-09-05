@@ -30,12 +30,12 @@ jobs:
           pip install --upgrade virtualenv
           pip install --upgrade buildozer
 
-      - name: Pre-cache freetype package (Bypass 502 Bad Gateway)
+            - name: Pre-cache freetype package (Bypass 502 Bad Gateway)
         run: |
-          mkdir -p ~/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/
-          # Download from SourceForge mirror if GNU server is down
-          wget https://sourceforge.net/projects/freetype/files/freetype2/2.14.1/freetype-2.14.1.tar.gz/download -O ~/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/freetype-2.14.1.tar.gz || \
-          wget https://mirror.download.it/gnu/freetype/freetype-2.14.1.tar.gz -O ~/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/freetype-2.14.1.tar.gz || true
+          mkdir -p .buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/
+          wget https://sourceforge.net/projects/freetype/files/freetype2/2.14.1/freetype-2.14.1.tar.gz/download -O .buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/freetype-2.14.1.tar.gz || \
+          wget https://download.savannah.gnu.org/releases/freetype/freetype-2.14.1.tar.gz -O .buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/freetype-2.14.1.tar.gz || \
+          wget https://mirror.download.it/gnu/freetype/freetype-2.14.1.tar.gz -O .buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/freetype/freetype-2.14.1.tar.gz || true
 
       - name: Build with Buildozer
         run: |
